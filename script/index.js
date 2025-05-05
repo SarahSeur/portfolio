@@ -1,6 +1,6 @@
 const horizontalSwiper = new Swiper(".card-swiper--horizontal", {
   slidesPerView: "auto",
-  spaceBetween: 125,
+  spaceBetween: 42,
   freeMode: true,
   grabCursor: true,
 });
