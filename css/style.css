@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --ratio: 1.61803398875;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -21,12 +36,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    width: calc(100% - 2rem);
+    width: calc(100% - var(--s2));
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding: var(--s4) 0;
 }
 
 
@@ -41,12 +55,10 @@ h1, h2, h3, h4, h5, h6 {
 .landing__text-container {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: var(--s1);
     margin-right: -10rem;
     z-index: 1;
 }
-
-
 
 .landing__heading {
     font-size: 8rem;
@@ -62,61 +74,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .landing__image {
-    width: 100%;
-    max-width: 32rem;
+    width: 32rem;
+    max-width: 100%;
     border-radius: 0.75rem;
 }
 
-@media only screen and (max-width: 1024px) {
-    .landing__text-container {
-        margin-right: 0;
-    }
 
-    .landing__image {
-        max-width: 24rem;
-    }
-
-    .container {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
 
 
 
 /*About*/
 .about {
+    background-color: #FF0000;
+    color: white;
+}
+
+.about__container {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 5rem;
-
-    padding: 100px 125px;
-    background-color: #FF0000;
+    gap: var(--s2);
 }
 
 .about__content {
-    display: flex;
-    flex-direction: column;
+    flex-basis: 50ch;
+    flex-grow: 999;
 
-    gap: 1.6875rem;
+    display: grid;
+    gap: var(--s1);
 }
 
 .about__header {
     font-weight: 900;
-    font-family: "Inter", sans-serif;
     font-size: 2.25rem;
-    color: white;
     letter-spacing: -0.10rem;
 }
 
 .about__image {
-    width: 300px;
-    border-radius: 12px;
-}
+    flex-grow: 1;
 
-.about__body {
-    color: white;
+    width: 100%;
+    max-width: 18rem;
+    border-radius: 0.75rem;
 }
 
 
@@ -124,16 +125,23 @@ h1, h2, h3, h4, h5, h6 {
 /*Experience*/
 .experience {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 6.25rem;
-    padding: 100px 125px;
+    justify-content: left;
+    gap: var(--s2);
 }
 
 .experience__body {
     display: flex;
+    flex-basis: 50ch;
+    flex-grow: 999;
     flex-direction: column;
     gap: 3.75rem;
+}
+
+.experience__header {
+    max-width: min-content;
 }
 
 .experience__icon-container {
@@ -145,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 50px;
 }
 
-.experience__header--text {
+.experience__header-text {
     font-size: 128px;
     font-family: "Inter", sans-serif;
     font-weight: 600;
@@ -157,6 +165,36 @@ h1, h2, h3, h4, h5, h6 {
     paint-order: stroke fill;
     -webkit-text-stroke: 2px black;
     -webkit-text-fill-color: #FFEDDF;
+}
+
+@media only screen and (max-width: 1024px) {
+    .landing__text-container {
+        margin-right: 0;
+    }
+
+    .landing__image {
+        width: 24rem;
+    }
+
+    .container {
+        padding: var(--s3) 0;
+    }
+
+    .experience {
+        flex-direction: column;
+    }
+
+    .experience__header-text--decorative {
+        display: none;
+    }
+
+    .experience__header-text {
+        font-weight: 900;
+        font-size: 2.25rem;
+        letter-spacing: -0.10rem;
+        -webkit-text-stroke: unset;
+        -webkit-text-fill-color: unset;
+    }
 }
 
 
