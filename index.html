@@ -9,22 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-<header>
-    <nav class="navigation">
-        <ul class="navigation__list">
-            <li class="navigation__link">Wie ben ik?</li>
-            <li class="navigation__link">Ervaring</li>
-            <li class="navigation__link">Mijn eerste jaar</li>
-            <li class="navigation__link">CV</li>
-            <li class="navigation__link">Contact</li>
-        </ul>
-    </nav>
-</header>
-
 <main>
-    <section class="landing">
+    <section class="landing container">
         <hgroup class="landing__text-container">
-            <h1 class="landing__heading">Sarah Seur</h1>
+            <h1 class="landing__heading">Sarah <br> Seur</h1>
             <p class="landing__body">Eerstejaars student CMD</p>
         </hgroup>
 
@@ -267,54 +255,52 @@
     </div>
 
 
-    <form class="contact__form" id="form">
-        <div class="contact__form-box">
-            <label class="contact__label" for="naam">Naam:</label>
+    <form class="form" id="form">
+        <div class="form__input-container">
+            <label class="form__input-label" for="naam">Naam:</label>
             <input
-                    class="input-box"
-                    id="naam"
-                    type="text"
-                    name="naam"
-                    placeholder="Jan de Vries"
-                    required aria-required="true">
+                class="form__input"
+                id="naam"
+                type="text"
+                name="naam"
+                placeholder="Jan de Vries"
+                required aria-required="true">
         </div>
 
-        <div class="contact__form-box">
+        <div class="form__input-container">
             <label class="contact__label" for="mail">E-mail:</label>
             <input
-                    class="input-box"
-                    id="mail"
-                    type="text"
-                    name="mail"
-                    placeholder="jandevries@gmail.com"
-                    required aria-required="true">
+                class="form__input"
+                id="mail"
+                type="text"
+                name="mail"
+                placeholder="jandevries@gmail.com"
+                required aria-required="true">
         </div>
 
-        <div class="contact__form-box">
+        <div class="form__input-container">
             <label class="contact__label" for="onderwerp">Onderwerp:</label>
             <input
-                    class="input-box"
-                    id="onderwerp"
-                    type="text"
-                    name="onderwerp"
-                    placeholder="Vragen over.."
-                    required aria-required="true">
+                class="form__input"
+                id="onderwerp"
+                type="text"
+                name="onderwerp"
+                placeholder="Vragen over.."
+                required aria-required="true">
         </div>
 
-        <div class="contact__form-box">
+        <div class="form__input-container">
             <label class="contact__label" for="bericht">Bericht:</label>
             <textarea
-                    class="input-box"
-                    id="bericht"
-                    name="bericht"
-                    cols="30"
-                    rows="10"
-                    placeholder="Typ een bericht.."
-                    required aria-required="true">
-                </textarea>
+                class="form__input form__input--textarea"
+                id="bericht"
+                name="bericht"
+                placeholder="Typ een bericht.."
+                required aria-required="true"
+            ></textarea>
         </div>
 
-        <button class="input-box input-box--button" type="submit" form="form" value="versturen">Verstuur</button>
+        <button class="form__input form__input--button" type="submit" form="form" value="versturen">Verstuur</button>
     </form>
 </footer>
 

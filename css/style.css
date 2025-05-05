@@ -5,6 +5,10 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FFEDDF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #090C02;
 }
 
 h1, h2, h3, h4, p, figure {
@@ -12,75 +16,51 @@ h1, h2, h3, h4, p, figure {
     padding: 0;
 }
 
-p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
 }
 
-.navigation {
-    padding: 27px 125px ;
+.container {
+    width: calc(100% - 2rem);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.navigation__list {
-    padding: 0;
-    margin: 0;
-
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: #090C02;
-}
-
-.navigation__link:hover {
-    transform: scale(1.01);
-    transition: scale 100ms ease-in;
-}
-
 
 
 /*Landing*/
+
 .landing {
     display: flex;
+    justify-content: center;
     align-items: flex-end;
-    min-height: calc(100vh - 84px);
-}
-
-.landing__heading {
-    width: 23.1875rem;
-
-    font-family: "Inter", sans-serif;
-    font-size: 9.375rem;
-    font-style: normal;
-    font-weight: 800;
-    color: #F00;
-
-    line-height: 62%;
-    letter-spacing: -13px;
 }
 
 .landing__text-container {
-    gap: 1.875rem;
-
     display: flex;
     flex-direction: column;
+    gap: 1.75rem;
+    margin-right: -14ch;
+    z-index: 1;
+}
+
+.landing__heading {
+    font-size: 8rem;
+    line-height: 0.62;
+    letter-spacing: -0.6rem;
+    font-weight: 800;
+    color: #F00;
 }
 
 .landing__body {
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 2rem;
-    color: #090C02;
 }
 
 .landing__image {
-    width: 500px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 32rem;
+    border-radius: 0.75rem;
 }
 
 
@@ -375,7 +355,7 @@ p {
     margin-bottom: 1.25rem;
 }
 
-.contact__form {
+.form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -390,7 +370,7 @@ p {
     color: white;
 }
 
-.input-box {
+.form__input {
     font-family: "Poppins", sans-serif;
     font-size: 0.75rem;
     font-weight: 300;
@@ -400,17 +380,16 @@ p {
     border: none;
 }
 
-.input-box:focus {
+.form__input:focus {
     outline-color: #FF0000;
 }
 
-.contact__form-box {
+.form__input-container {
     gap: 0.25rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
-.input-box--button {
+.form__input--button {
     text-transform: uppercase;
 
     color: #090C02;
@@ -419,7 +398,7 @@ p {
     cursor: pointer;
 }
 
-
-textarea {
+.form__input--textarea {
     resize: none;
+    min-height: 8rlh;
 }
